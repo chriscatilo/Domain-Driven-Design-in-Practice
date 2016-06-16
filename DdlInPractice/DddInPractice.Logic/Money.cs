@@ -1,6 +1,6 @@
 ﻿namespace DddInPractice.Logic
 {
-    public class Money
+    public class Money : ValueObject<Money>
     {
         public int OneCentCount { get; private set; }
         public int TwoCentCount { get; private set; }
@@ -38,6 +38,31 @@
                 );
 
             return sum;
+        }
+
+        protected override bool EqualsCore(Money other)
+        {
+            return base.Equals(other) && 
+                OneCentCount == other.OneCentCount && 
+                TwoCentCount == other.TwoCentCount &&
+                QuarterCount == other.QuarterCount && 
+                OneDollarCount == other.OneDollarCount &&
+                FiveDollarCount == other.FiveDollarCount && 
+                TwentyDollarCount == other.TwentyDollarCount;
+        }
+
+        protected override int GetHashCodeCore()
+        {
+            unchecked
+            {
+                int hashCode = OneCentCount;
+                hashCode = (hashCode * 397) ^ TwoCentCount;
+                hashCode = (hashCode * 397) ^ QuarterCount;
+                hashCode = (hashCode * 397) ^ OneDollarCount;
+                hashCode = (hashCode * 397) ^ FiveDollarCount;
+                hashCode = (hashCode * 397) ^ TwentyDollarCount;
+                return hashCode;
+            }
         }
     }
 }
