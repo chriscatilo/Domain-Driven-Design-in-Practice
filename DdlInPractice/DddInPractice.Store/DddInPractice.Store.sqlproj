@@ -68,4 +68,7 @@
   <ItemGroup>
     <RefactorLog Include="DddInPractice.Store.refactorlog" />
   </ItemGroup>
+  <ItemGroup>
+    <PostDeploy Include="PostDeploy.sql" />
+  </ItemGroup>
 </Project>
