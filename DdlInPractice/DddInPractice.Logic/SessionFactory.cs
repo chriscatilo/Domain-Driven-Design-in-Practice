@@ -34,6 +34,7 @@ namespace DddInPractice.Logic
                         ConventionBuilder.Property
                             .When(criteria => criteria.Expect(x => x.Nullable, Is.Not.Set), x => x.Not.Nullable()))
                     .Conventions.Add<TableNameConvention>()
+                    .Conventions.Add<HiLoConvention>()
                 );
 
             return configuration.BuildSessionFactory();
@@ -44,6 +45,15 @@ namespace DddInPractice.Logic
             public void Apply(IClassInstance instance)
             {
                 instance.Table("[dbo].[" + instance.EntityType.Name + "]");
+            }
+        }
+
+        public class HiLoConvention : IIdConvention
+        {
+            public void Apply(IIdentityInstance instance)
+            {
+                instance.Column(instance.EntityType.Name + "ID");
+                instance.GeneratedBy.HiLo("[dbo].[Ids]", "NextHigh", "9", "EntityName = '" + instance.EntityType.Name + "'");
             }
         }
     }
