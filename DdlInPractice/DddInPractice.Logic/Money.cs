@@ -84,8 +84,7 @@ namespace DddInPractice.Logic
 
         protected override bool EqualsCore(Money other)
         {
-            return base.Equals(other) && 
-                OneCentCount == other.OneCentCount && 
+            return OneCentCount == other.OneCentCount && 
                 TenCentCount == other.TenCentCount &&
                 QuarterCount == other.QuarterCount && 
                 OneDollarCount == other.OneDollarCount &&
