@@ -1,0 +1,5 @@
+﻿CREATE TABLE [dbo].[Ids]
+(
+	[EntityName] VARCHAR(255) PRIMARY KEY,
+	[NextHigh] INT NOT NULL DEFAULT 0
+)

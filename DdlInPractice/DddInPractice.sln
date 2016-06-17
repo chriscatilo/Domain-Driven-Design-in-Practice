@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DddInPractice.Tests", "DddI
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DddInPractice.UI", "DddInPractice.UI\DddInPractice.UI.csproj", "{22298B76-87EC-4C16-A393-CA2D780CA15D}"
 EndProject
+Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "DddInPractice.Store", "DddInPractice.Store\DddInPractice.Store.sqlproj", "{A993294A-DAE2-4228-BBBB-2B1D5844BE81}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,12 @@ Global
 		{22298B76-87EC-4C16-A393-CA2D780CA15D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{22298B76-87EC-4C16-A393-CA2D780CA15D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{22298B76-87EC-4C16-A393-CA2D780CA15D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A993294A-DAE2-4228-BBBB-2B1D5844BE81}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A993294A-DAE2-4228-BBBB-2B1D5844BE81}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A993294A-DAE2-4228-BBBB-2B1D5844BE81}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{A993294A-DAE2-4228-BBBB-2B1D5844BE81}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A993294A-DAE2-4228-BBBB-2B1D5844BE81}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A993294A-DAE2-4228-BBBB-2B1D5844BE81}.Release|Any CPU.Deploy.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
