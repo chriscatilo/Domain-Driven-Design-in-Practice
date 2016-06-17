@@ -31,7 +31,7 @@ namespace DddInPractice.Logic
         {
             MoneyInside += MoneyInTransaction;
 
-            //MoneyInTransaction = 0;
+            MoneyInTransaction = None;
         }
 
     }
