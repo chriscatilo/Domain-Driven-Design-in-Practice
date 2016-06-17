@@ -2,9 +2,9 @@
 {
     public partial class App
     {
-        //public App()
-        //{
-        //    Initer.Init(@"Server=.;Database=DddInPractice;Trusted_Connection=true");
-        //}
+        public App()
+        {
+            Initer.Init(@"Server=.\SQLEXPRESS;Database=DddInPractice;Trusted_Connection=true");
+        }
     }
 }
