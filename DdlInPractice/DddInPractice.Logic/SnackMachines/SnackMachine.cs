@@ -1,8 +1,8 @@
-﻿using System;
+﻿using DddInPractice.Logic.Common;
+using DddInPractice.Logic.SharedKernel;
+using System;
 using System.Collections.Generic;
 using System.Linq;
-using DddInPractice.Logic.Common;
-using DddInPractice.Logic.SharedKernel;
 
 namespace DddInPractice.Logic.SnackMachines
 {
@@ -104,6 +104,16 @@ namespace DddInPractice.Logic.SnackMachines
         public virtual void LoadMoney(Money money)
         {
             MoneyInside += money;
+        }
+
+        public virtual Money UnloadMoney()
+        {
+            if (MoneyInTransaction > 0)
+                throw new InvalidOperationException();
+
+            Money money = MoneyInside;
+            MoneyInside = Money.None;
+            return money;
         }
     }
 }
