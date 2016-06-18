@@ -13,6 +13,7 @@ Post-Deployment Script Template
 INSERT INTO dbo.Ids VALUES ('Slot', 1)
 INSERT INTO dbo.Ids VALUES ('Snack', 1)
 INSERT INTO dbo.Ids VALUES ('SnackMachine', 1)
+INSERT INTO dbo.Ids VALUES ('Atm', 1)
 
 INSERT INTO dbo.Snack VALUES (1, 'Chocolate')
 INSERT INTO dbo.Snack VALUES (2, 'Soda')
@@ -24,3 +25,6 @@ INSERT INTO dbo.Slot (SlotID, Quantity, Price, SnackID, SnackMachineID, Position
 	(1,10,3.00,1,1,1),
 	(2,15,2.00,2,1,2),
 	(3,20,1.00,3,1,3)
+
+INSERT INTO dbo.Atm (AtmID, MoneyCharged, OneCentCount, TenCentCount, QuarterCount, OneDollarCount, FiveDollarCount, TwentyDollarCount) VALUES 
+	(1,0.00, 100, 100, 100, 100, 100, 100)
