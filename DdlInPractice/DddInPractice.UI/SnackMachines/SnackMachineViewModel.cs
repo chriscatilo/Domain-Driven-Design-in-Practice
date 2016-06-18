@@ -1,9 +1,10 @@
-﻿using DddInPractice.Logic;
-using DddInPractice.UI.Common;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
+using DddInPractice.Logic.SharedKernel;
+using DddInPractice.Logic.SnackMachines;
+using DddInPractice.UI.Common;
 
-namespace DddInPractice.UI
+namespace DddInPractice.UI.SnackMachines
 {
     public class SnackMachineViewModel : ViewModel
     {
