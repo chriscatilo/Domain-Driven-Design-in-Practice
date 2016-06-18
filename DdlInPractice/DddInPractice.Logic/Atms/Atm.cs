@@ -37,7 +37,7 @@ namespace DddInPractice.Logic.Atms
             decimal amountWithCommission = CaluculateAmountWithCommission(amount);
             MoneyCharged += amountWithCommission;
 
-            DomainEvents.Raise(new BalanceChangedEvent(amountWithCommission));
+            AddDomainEvent(new BalanceChangedEvent(amountWithCommission));
         }
 
         public virtual decimal CaluculateAmountWithCommission(decimal amount)

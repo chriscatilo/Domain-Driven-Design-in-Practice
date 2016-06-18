@@ -1,7 +1,6 @@
 ﻿using DddInPractice.Logic.Atms;
-using DddInPractice.Logic.Common;
-using DddInPractice.Logic.Utils;
 using FluentAssertions;
+using System.Linq;
 using Xunit;
 using static DddInPractice.Logic.SharedKernel.Money;
 
@@ -48,19 +47,25 @@ namespace DddInPractice.Tests
         [Fact]
         public void Take_money_raises_an_event()
         {
-            Initer.Init(@"Server=.\SQLEXPRESS;Database=DddInPractice;Trusted_Connection=true");
             Atm atm = new Atm();
             atm.LoadMoney(Dollar);
-
-            BalanceChangedEvent balanceChangedEvent = null;
-            DomainEvents.Register<BalanceChangedEvent>(ev => balanceChangedEvent = ev);
-
+            
             atm.TakeMoney(1m);
 
-            balanceChangedEvent.Should().NotBeNull();
-            balanceChangedEvent.Delta.Should().Be(1.01m);
+            atm.ShouldContainBalanceChangedEvent(1.01m);
+        }
+    }
 
 
+    internal static class AtmExtensions
+    {
+        public static void ShouldContainBalanceChangedEvent(this Atm atm, decimal delta)
+        {
+            BalanceChangedEvent domainEvent = (BalanceChangedEvent)atm.DomainEvents
+                .SingleOrDefault(x => x.GetType() == typeof(BalanceChangedEvent));
+
+            domainEvent.Should().NotBeNull();
+            domainEvent.Delta.Should().Be(delta);
         }
     }
 }
