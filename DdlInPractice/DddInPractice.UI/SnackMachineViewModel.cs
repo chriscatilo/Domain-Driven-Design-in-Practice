@@ -12,7 +12,7 @@ namespace DddInPractice.UI
 
         public string MoneyInTransaction => _snackMachine.MoneyInTransaction.ToString();
 
-        public Money MoneyInside => _snackMachine.MoneyInside + _snackMachine.MoneyInTransaction;
+        public Money MoneyInside => _snackMachine.MoneyInside;
 
         private string _message = "";
         public string Message
@@ -50,7 +50,7 @@ namespace DddInPractice.UI
 
         private void BuySnack()
         {
-            _snackMachine.BuySnack();
+            _snackMachine.BuySnack(1);
 
             using (ISession session = SessionFactory.OpenSession())
             using (ITransaction transaction = session.BeginTransaction())
@@ -61,7 +61,6 @@ namespace DddInPractice.UI
 
             NotifyClient("You have bought a snack");
         }
-
 
         private void ReturnMoney()
         {
