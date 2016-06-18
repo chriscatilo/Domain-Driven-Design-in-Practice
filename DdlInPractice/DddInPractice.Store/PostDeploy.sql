@@ -10,4 +10,12 @@ Post-Deployment Script Template
 --------------------------------------------------------------------------------------
 */
 
+INSERT INTO dbo.Ids VALUES ('Slot', 1)
+INSERT INTO dbo.Ids VALUES ('Snack', 1)
+INSERT INTO dbo.Ids VALUES ('SnackMachine', 1)
+
+INSERT INTO dbo.Snack VALUES (1, 'Chocolate')
+INSERT INTO dbo.Snack VALUES (2, 'Soda')
+INSERT INTO dbo.Snack VALUES (3, 'Gum')
+
 INSERT INTO dbo.SnackMachine VALUES (1,1,1,1,1,1,1)

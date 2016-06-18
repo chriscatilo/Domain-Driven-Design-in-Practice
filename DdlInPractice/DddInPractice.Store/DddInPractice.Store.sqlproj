@@ -61,6 +61,8 @@
   <ItemGroup>
     <Build Include="SnackMachine.sql" />
     <Build Include="Ids.sql" />
+    <Build Include="Slot.sql" />
+    <Build Include="Snack.sql" />
   </ItemGroup>
   <ItemGroup>
     <None Include="DddInPractice.SQLEXPRESS.publish.xml" />
