@@ -28,3 +28,6 @@ INSERT INTO dbo.Slot (SlotID, Quantity, Price, SnackID, SnackMachineID, Position
 
 INSERT INTO dbo.Atm (AtmID, MoneyCharged, OneCentCount, TenCentCount, QuarterCount, OneDollarCount, FiveDollarCount, TwentyDollarCount) VALUES 
 	(1,0.00, 100, 100, 100, 100, 100, 100)
+	
+INSERT INTO dbo.HeadOffice(HeadOfficeID, Balance, OneCentCount, TenCentCount, QuarterCount, OneDollarCount, FiveDollarCount, TwentyDollarCount) VALUES 
+	(1, 10.00, 20, 20, 20, 20, 20, 20)

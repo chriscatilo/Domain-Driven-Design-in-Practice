@@ -1,13 +1,15 @@
-﻿using DddInPractice.Logic;
+﻿using DddInPractice.Logic.Management;
+using DddInPractice.Logic.SnackMachines;
+using DddInPractice.Logic.Utils;
 using Xunit;
-using static DddInPractice.Logic.Money;
+using static DddInPractice.Logic.SharedKernel.Money;
 
 namespace DddInPractice.Tests
 {
     public class TemporaryDbTests
     {
         [Fact]
-        public void Test()
+        public void TestSnackMachineEntity()
         {
             SessionFactory.Init(@"Server=.\SQLEXPRESS;Database=DddInPractice;Trusted_Connection=true");
 
@@ -21,6 +23,16 @@ namespace DddInPractice.Tests
             snackMachine.BuySnack(1);
 
             repository.Save(snackMachine);
+        }
+
+
+        [Fact]
+        public void TestHeadOfficeEntity()
+        {
+            SessionFactory.Init(@"Server=.\SQLEXPRESS;Database=DddInPractice;Trusted_Connection=true");
+
+            HeadOfficeInstance.Init();
+            var office = HeadOfficeInstance.Instance;
         }
     }
 }
