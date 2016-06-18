@@ -78,7 +78,7 @@ namespace DddInPractice.Logic
             slot.SnackPile = snackPile;
         }
 
-        public void LoadMoney(Money money)
+        public virtual void LoadMoney(Money money)
         {
             MoneyInside += money;
         }

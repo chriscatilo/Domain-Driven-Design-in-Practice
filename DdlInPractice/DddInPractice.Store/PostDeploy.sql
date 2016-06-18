@@ -6,7 +6,7 @@ Post-Deployment Script Template
  Example:      :r .\myfile.sql								
  Use SQLCMD syntax to reference a variable in the post-deployment script.		
  Example:      :setvar TableName MyTable							
-               SELECT * FROM [$(TableName)]					
+			   SELECT * FROM [$(TableName)]					
 --------------------------------------------------------------------------------------
 */
 
@@ -19,3 +19,8 @@ INSERT INTO dbo.Snack VALUES (2, 'Soda')
 INSERT INTO dbo.Snack VALUES (3, 'Gum')
 
 INSERT INTO dbo.SnackMachine VALUES (1,1,1,1,1,1,1)
+
+INSERT INTO dbo.Slot (SlotID, Quantity, Price, SnackID, SnackMachineID, Position) VALUES 
+	(1,10,3.00,1,1,1),
+	(2,15,2.00,2,1,2),
+	(3,20,1.00,3,1,3)
